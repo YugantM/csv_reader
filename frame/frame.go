@@ -7,9 +7,27 @@ import("fmt"
        )
 
 type Frame struct{
-  Head []string
-  Data []string
+  Store []string
 }
+
+func (f *Frame) Head() string{
+
+  for index := 1;  index <= 5; index++ {
+      fmt.Println("[",index-1,"]",f.Store[index])
+  }
+
+return f.Store[0]
+}
+
+func (f *Frame) Data() []string{
+
+  for index := 1;  index < len(f.Store)-1; index++ {
+      fmt.Println("[",index-1,"]",f.Store[index])
+  }
+
+return f.Store[1:]
+}
+
 
 func (f *Frame) Init(file_name string){
 
@@ -19,7 +37,6 @@ func (f *Frame) Init(file_name string){
           return
       }
 
-    rows:= strings.Split(string(data),"\n")
-    f.Head = strings.Split(rows[0],",")
-    f.Data = rows[1:]
+      f.Store = strings.Split(string(data),"\n")
+
 }
