@@ -19,6 +19,11 @@ func (f *Frame) Head() string{
 return f.Store[0]
 }
 
+func (f *Frame) Height() int{
+
+return len(f.Store)
+}
+
 func (f *Frame) Data() []string{
 
   for index := 1;  index < len(f.Store)-1; index++ {

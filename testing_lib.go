@@ -8,7 +8,5 @@ func main(){
       df := new(frame.Frame)
       df.Init("T.csv")
 
-      fmt.Println(df.Head())
-
-
+      fmt.Println(df.Height())
 }
