@@ -19,6 +19,20 @@ func (f *Frame) Head() string{
 return f.Store[0]
 }
 
+func (f *Frame) Row(number int) string{
+
+return f.Store[1+number]
+}
+
+func (f *Frame) Rows(start int,end int) string{
+  temp := ""
+
+  for index:=start; index< end; index++{
+    temp = temp + f.Row(index) + "\n"
+  }
+return temp
+}
+
 func (f *Frame) Height() int{
 
 return len(f.Store)

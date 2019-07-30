@@ -4,9 +4,9 @@ import ("fmt"
         "./frame")
 
 func main(){
-      fmt.Println("fmt used!")
+      //fmt.Println("fmt used!")
       df := new(frame.Frame)
       df.Init("T.csv")
 
-      fmt.Println(df.Height())
+      fmt.Println(df.Rows(0,6))
 }
